@@ -85,7 +85,7 @@ class Php7dev
     if settings['databases'].kind_of?(Array)
       settings["databases"].each do |db|
           config.vm.provision "shell" do |s|
-              s.path = "./scripts/create-mysql.sh"
+              s.path = "./scripts/mysql-init.sh"
               s.args = [db]
           end
       end
