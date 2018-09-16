@@ -15,12 +15,16 @@ networking:
     - public: true
 
 folders:
-#    - map: example-folder
-#      to: /path/in/vagrant/example-folder
+    - map: ~/projects/envms/fluentpdo
+      to: /home/vagrant/www/fluentpdo
+    - map: ~/projects/envms/osseus
+      to: /home/vagrant/www/osseus
+    - map: ~/projects/envms/web
+      to: /home/vagrant/www/web
 
 sites:
-#    - hostname: example-site
-#      to: /home/vagrant/www/example-site
+    - hostname: envms
+      to: /home/vagrant/www/web
 
 databases:
-    - example_database
+    - fluentdb
