@@ -36,15 +36,15 @@ if($argc>2) {
 }
 
 $version = preg_replace('/[\.\-]+/', '', $argv[1]);
-if($version=='7') switch_php('php70', $debug, $zts);
+if($version=='7') switch_php('php72', $debug, $zts);
 else if($version=='5') switch_php('php56', $debug, $zts);
 else if(file_exists("$prefix/$version/bin/php")) switch_php($version, $debug, $zts);
 else switch_php('php'.$version, $debug, $zts);
 
 function usage() {
     $cmd = basename(__FILE__);
-    echo "Usage: $cmd 71|70|56|55|54|53 [debug|zts|debugzts]\n";
-    echo "To switch to PHP 5.5-debug: $cmd 55 debug\n\n";
+    echo "Usage: $cmd 72|71|70|56 [debug|zts|debugzts]\n";
+    echo "To switch to PHP 7.2-debug: $cmd 72 debug\n\n";
     exit;
 }
 
