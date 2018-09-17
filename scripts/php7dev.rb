@@ -1,7 +1,7 @@
 class Php7dev
   def Php7dev.configure(config, settings)
     # Configure The Box
-    config.vm.box = "rasmus/php7dev"
+    config.vm.box = "envms/php7dev"
     config.vm.hostname = "php7dev"
 
     # Configure A Private Network IP
@@ -15,7 +15,7 @@ class Php7dev
     config.vm.provider "virtualbox" do |vb|
       vb.name = 'php7dev'
       vb.customize ["modifyvm", :id, "--memory", settings["memory"] ||= "2048"]
-      vb.customize ["modifyvm", :id, "--cpus", settings["cpus"] ||= "1"]
+      vb.customize ["modifyvm", :id, "--cpus", settings["cpus"] ||= "2"]
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       vb.customize ["modifyvm", :id, "--ostype", "Debian_64"]
